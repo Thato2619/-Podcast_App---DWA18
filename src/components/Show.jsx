@@ -35,9 +35,9 @@ export const Show = (props) => {
       
 
       <div>
-      <div className="animate-slideup rounded-lg cursor-pointer">
+        <div className="animate-slideup rounded-lg cursor-pointer">
         <div className="backdrop-blur animate-slideup">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 relative w-full h-56 group">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 relative w-full h-56 group">
         {show.seasons.map(({ image, number, title, updated, season }) => {
           return (
             <button  className="shadow-lg rounded-lg p-4 bg-white/5 bg-opacity-80 backdrop-blur" key={season} onClick={() => onSelect(season)}>
