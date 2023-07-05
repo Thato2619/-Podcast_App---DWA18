@@ -11,10 +11,36 @@ export const Show = (props) => {
 
   return (
     <div>
-      <h2>Info</h2>
+      <h2 className="text-3xl text-[#e9e2e7] font-bold">ALL SEASONS</h2>
       <button onClick={onBack}>BACK</button>
 
-      <ul>
+      
+      
+
+      <div>
+      <div className="animate-slideup rounded-lg cursor-pointer">
+        <div className="backdrop-blur animate-slideup">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 relative w-full h-56 group">
+        {show.seasons.map(({ image, number, title, updated, season }) => {
+          return (
+            <button  className="shadow-lg rounded-lg p-4 bg-white/5 bg-opacity-80 backdrop-blur" key={season} onClick={() => onSelect(season)}>
+              <img  src={image} className="rounded-t-lg" alt="POD_IMG" />
+              <h3 className="text-3xl font-bold text-[#e9e2e7] mb-3">{title}</h3>
+            </button>
+          );
+        })}
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Show;
+
+/**
+ * <ul>
         <li>
           <img src={show.image} />
         </li>
@@ -32,22 +58,4 @@ export const Show = (props) => {
         </li>
       </ul>
 
-      <h2>Seasons</h2>
-
-      <div>
-        {show.seasons.map(({ image, number, title, updated, season }) => {
-          return (
-            <button key={season} onClick={() => onSelect(season)}>
-              <img src={image} />
-              <h3>{title}</h3>
-              <div>#{number}</div>
-              <div>Updated: {calcDisplayDate(updated)}</div>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-export default Show;
+ */
