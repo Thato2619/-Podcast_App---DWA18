@@ -1,4 +1,6 @@
-/**
+
+import {IoIosArrowRoundBack} from 'react-icons/io'
+/** 
  * @param {object} props
  * @param {() => void} props.onBack
  * @param {import('../types').Season} props.season
@@ -7,8 +9,17 @@ export const Season = (props) => {
   const { onBack, season } = props;
 
   return (
-    <div>
-      <button onClick={onBack}>BACK</button>
+    <div >
+       <div className="relative h-32 w-32" >
+        <div className="absolute inset-x-0 top-0 h-16">
+        <button 
+        onClick={onBack} 
+        className='bg-[#fbfbf2] hover:bg-[#a39ba8] cursor-pointer border-2 border-[#090708] rounded-full text-center font-bold text-[#080708] px-3 py-1'
+        >
+          <IoIosArrowRoundBack size={30} />
+        </button>
+        </div>
+        </div>
 
 
       <img  className="rounded-t-lg" alt="POD_IMG"  src={season.image} />
