@@ -50,15 +50,17 @@ export const Previews = (props) => {
                         <span> {seasons}</span>
                       </p>
 
-                      <h5 className="text-lg font-normal text-[#a07e96]">
-                        Updated: {calcDisplayDate(updated)}
-                      </h5>
-
                       <ul>
                         {genres.map((genreId) => (
-                          <li key={genreId}>{GENRE_MAP[genreId]}</li>
+                          <li  className="text-lg font-bold text-[#a07e96]" key={genreId}>{GENRE_MAP[genreId]}</li>
                         ))}
                       </ul>
+
+                      <h5 className="text-lg font-normal text-[#e9e2e7]">
+                        <span className="text-lg font-bold text-[#e9e2e7]">Updated</span>: {calcDisplayDate(updated)}
+                      </h5>
+
+                     
                     </div>
                   </button>
                 );
