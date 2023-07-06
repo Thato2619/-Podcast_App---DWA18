@@ -4,6 +4,10 @@ import Show from "./Show";
 import {GiHeadphones} from 'react-icons/gi'
 
 
+
+  
+ 
+
 /**
  * @param {object} props
  * @param {number} props.genre
@@ -41,8 +45,14 @@ export const Previews = (props) => {
             <GiHeadphones size={30} className="text-[#a07e96]"/>
             <h1 className='text-3xl text-[#a07e96] font-bold font-tilt'>UNPLUGGED PODCAST</h1>
       </div>
+
+      <div>
+
+      </div>
+
       </div>
      <div classsName="pb-10  py-4 px-4 bg-[#202020] text-[#e9e2e7] text-sm flex flex-wrap justify-between border border-l-0 border-r-0 border-t-[0.4px] border-b-[1px] border-[#a07e96] py-4 px-6">
+       
           <a href='/'>
             <button className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">Home</button>
           </a>
@@ -96,7 +106,7 @@ export const Previews = (props) => {
             //.sort((a,b) => a.title > b.title ? 1: -1) // sort from a-z 
             //.sort((b,a) => b.title > a.title ? -1: 1) // sort from z-a
             //.sort((a,b) => a.updated > b.updated ? 1: -1) // sort from oldest - newest
-            //.sort((b,a) => b.updated > a.updated ? -1: 1) // sort from newest - oldest
+            .sort((b,a) => b.updated > a.updated ? -1: 1) // sort from newest - oldest
 
             .map(
               ({ id, image, seasons, title, genres, updated }) => {
