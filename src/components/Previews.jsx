@@ -1,4 +1,7 @@
 import { GENRE_MAP, calcDisplayDate } from "../utils";
+import { useState } from "react";
+import Show from "./Show";
+
 
 /**
  * @param {object} props
@@ -9,11 +12,13 @@ import { GENRE_MAP, calcDisplayDate } from "../utils";
  */
 export const Previews = (props) => {
   const { list, genre, search, onSelect } = props;
+  
+
 
   const filteredList = list.filter((show) => {
     if (!genre && search === "") return true;
     const isGenreMatch = show.genres.includes(genre);
-    const isSearchMatch = show.title
+    const isSearchMatch = show.title 
       .toLowerCase()
       .includes(search.toLowerCase());
 
@@ -23,12 +28,36 @@ export const Previews = (props) => {
     return false;
   });
 
+  
+  
+
   return (
+
     <div>
+      <div>
+        <input 
+          type='text'
+          placeholder='Search'
+          className=' hidden md:flex w-full px-4 py-2 text-zinc-200 bg-zinc-900 border-[1px] border-zinc-700 focus:bg-black  focus:outline-none focus:ring-[1px] ring-[#a07e96] placeholder:text-zinc-400'
+          value={search}
+          onChange-={filteredList.filter((Show) => Show.title)}
+        />
+      </div>
       <div className="animate-slideup rounded-lg cursor-pointer">
         <div className="backdrop-blur animate-slideup">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 relative w-full h-56 group">
-            {filteredList.map(
+            {/**
+             * /**
+            * @type {(import('./types').Sorting')}
+            */
+             }
+            {filteredList
+            //.sort((a,b) => a.title > b.title ? 1: -1) // sort from a-z 
+            //.sort((b,a) => b.title > a.title ? -1: 1) // sort from z-a
+            //.sort((a,b) => a.updated > b.updated ? 1: -1) // sort from oldest - newest
+            //.sort((b,a) => b.updated > a.updated ? -1: 1) // sort from newest - oldest
+
+            .map(
               ({ id, image, seasons, title, genres, updated }) => {
                 return (
                   <button
@@ -57,7 +86,7 @@ export const Previews = (props) => {
                       </ul>
 
                       <h5 className="text-lg font-normal text-[#e9e2e7]">
-                        <span className="text-lg font-bold text-[#e9e2e7]">Updated</span>: {calcDisplayDate(updated)}
+                      <span className="text-lg font-bold text-[#e9e2e7]">Updated</span>: {calcDisplayDate(updated)}
                       </h5>
 
                      

@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { Previews, Season, Show } from "./components";
 import PuffLoader from "react-spinners/PuffLoader";
+import Search from "./components/Search";
+
+
 
 export const App = () => {
   const [loading, setLoading] = useState(true);
   const [list, setList] = useState([]);
   const [show, setShow] = useState(null);
   const [season, setSeason] = useState(null);
+  
 
   /**
    * @param {string} id
@@ -53,7 +57,7 @@ export const App = () => {
   if (season) {
     if (!show) throw new Error("Show is null");
     /**
-     * @type {import('./types').Show')}
+     * @type {(import('./types').Show')}
      */
     const showAsObject = show;
     return (
@@ -78,17 +82,25 @@ export const App = () => {
       />
     );
 
+    
+
   return (
     <div>
+     
       {/* <Navbar /> */}
       {/* <Header /> */}
       {/* <Hero /> */}
+      
       <Previews
         list={list}
         search=""
         genre={undefined}
         onSelect={handleSetShow}
       />
+
+      <div>
+        
+      </div>
     </div>
   );
 };
