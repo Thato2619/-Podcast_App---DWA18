@@ -56,7 +56,7 @@ export const Previews = (props) => {
           <a href='/'>
             <button className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">Home</button>
           </a>
-          <a href='/growth'>
+          <a href={GENRE_MAP[1] === "Personal Growth"}>
             <button className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">Personal Growth</button>
           </a>
           <a href='/investigative'>
@@ -94,6 +94,14 @@ export const Previews = (props) => {
           onChange-={filteredList.filter((Show) => Show.title)}
         />
       </div>
+
+      
+      
+
+     
+   
+
+     <div></div>
       <div className="animate-slideup rounded-lg cursor-pointer">
         <div className="backdrop-blur animate-slideup">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 relative w-full h-56 group">
@@ -106,7 +114,7 @@ export const Previews = (props) => {
             //.sort((a,b) => a.title > b.title ? 1: -1) // sort from a-z 
             //.sort((b,a) => b.title > a.title ? -1: 1) // sort from z-a
             //.sort((a,b) => a.updated > b.updated ? 1: -1) // sort from oldest - newest
-            .sort((b,a) => b.updated > a.updated ? -1: 1) // sort from newest - oldest
+            //.sort((b,a) => b.updated > a.updated ? -1: 1) // sort from newest - oldest
 
             .map(
               ({ id, image, seasons, title, genres, updated }) => {
