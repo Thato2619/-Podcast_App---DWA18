@@ -2,6 +2,7 @@ import { GENRE_MAP, calcDisplayDate } from "../utils";
 import { useState, useEffect } from "react";
 import Show from "./Show";
 import {GiHeadphones} from 'react-icons/gi'
+import Hero from "./Hero";
 
 
 
@@ -79,6 +80,7 @@ export const Previews = (props) => {
           </a>
     </div>
 
+    <Hero />
       <div>
         <input 
           type='text'
