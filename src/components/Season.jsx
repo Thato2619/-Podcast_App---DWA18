@@ -2,6 +2,7 @@
 import {IoIosArrowRoundBack} from 'react-icons/io'
 import {AiFillHeart } from 'react-icons/ai'
 import {useState} from 'react'
+
 /** 
  * @param {object} props
  * @param {() => void} props.onBack
@@ -44,6 +45,7 @@ export const Season = (props) => {
               <p className=' text-lg font-normal text-[#e9e2e7] w-40 hidden md:inline w-36 lg:w-64 truncate'>{description}</p> 
               <div className='md:ml-auto flex items-center space-x-2.5'>
               <div className='flex items-center rounded -full  w-[85px] h-[10] relative cursor-pointer group-hover: border-white/40'>
+
                 
                 <AiFillHeart 
                 key={title}

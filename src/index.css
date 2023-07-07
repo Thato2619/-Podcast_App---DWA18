@@ -115,6 +115,15 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.audio-player{
+  background-color: #090708 !important ;
+  height: 6rem;
+  color: #e9e2e7 !important;
+}
+
+.rhap_time, rhap_current-time{
+  
+}
 /* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

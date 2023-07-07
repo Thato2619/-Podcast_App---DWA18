@@ -1,5 +1,5 @@
 import { GENRE_MAP, calcDisplayDate } from "../utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Show from "./Show";
 import {GiHeadphones} from 'react-icons/gi'
 
@@ -18,6 +18,7 @@ import {GiHeadphones} from 'react-icons/gi'
 export const Previews = (props) => {
   const { list, genre, search, onSelect } = props;
   
+  
 
 
   const filteredList = list.filter((show) => {
@@ -33,9 +34,6 @@ export const Previews = (props) => {
     return false;
   });
 
-  
-  
-
   return (
 
     <div>
@@ -46,18 +44,14 @@ export const Previews = (props) => {
             <h1 className='text-3xl text-[#a07e96] font-bold font-tilt'>UNPLUGGED PODCAST</h1>
       </div>
 
-      <div>
-
-      </div>
-
       </div>
      <div classsName="pb-10  py-4 px-4 bg-[#202020] text-[#e9e2e7] text-sm flex flex-wrap justify-between border border-l-0 border-r-0 border-t-[0.4px] border-b-[1px] border-[#a07e96] py-4 px-6">
        
           <a href='/'>
             <button className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">Home</button>
           </a>
-          <a href={GENRE_MAP[1] === "Personal Growth"}>
-            <button className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">Personal Growth</button>
+          <a href="">
+            <button  className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">{GENRE_MAP[1]}</button>
           </a>
           <a href='/investigative'>
             <button className="bg-[#090708] hover:bg-[#a07e96] cursor-pointer border-2 border-[#a07e96] rounded-full text-center px-3 py-1 ">Investigative Journalism</button>

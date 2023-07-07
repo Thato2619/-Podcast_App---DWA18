@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Previews, Season, Show } from "./components";
 import PuffLoader from "react-spinners/PuffLoader";
 import Search from "./components/Search";
+import { GENRE_MAP } from "./utils";
 
 
 
@@ -94,7 +95,7 @@ export const App = () => {
       <Previews
         list={list}
         search=""
-        genre={undefined}
+        genre={GENRE_MAP === {list}}
         onSelect={handleSetShow}
       />
 
